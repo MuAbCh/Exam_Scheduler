@@ -81,6 +81,12 @@ def generate_schedule():
         "exam_length": int(data.get("exam_length"))
     }
 
+    # Check if the course already exists in schedules
+    existing_schedule = next((s for s in schedules if s['course'] == new_schedule['course']), None)
+    if existing_schedule:
+        schedules.remove(existing_schedule)
+        print(f"Removed existing schedule for course: {new_schedule['course']}")  # Debug log
+
     # Update in-memory schedule
     schedules.append(new_schedule)
     print(f"Added new schedule: {new_schedule}")  # Debug log

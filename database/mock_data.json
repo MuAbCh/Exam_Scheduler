@@ -59,9 +59,9 @@
                 20
             ],
             "exam": {
-                "date": null,
-                "time": null,
-                "length": null
+                "date": "2024-12-15",
+                "time": "09:00",
+                "length": "60 minutes"
             }
         },
         {
@@ -158,6 +158,26 @@
                 "date": null,
                 "time": null,
                 "length": null
+            }
+        },
+        {
+            "id": 11,
+            "name": "ece400",
+            "students": [],
+            "exam": {
+                "date": "2024-12-16",
+                "time": "09:00",
+                "length": "60 minutes"
+            }
+        },
+        {
+            "id": 12,
+            "name": "ece600",
+            "students": [],
+            "exam": {
+                "date": "2024-12-17",
+                "time": "12:00",
+                "length": "120 minutes"
             }
         }
     ],
