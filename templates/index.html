@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Exam Scheduler</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Smart Exam Scheduler</h1>
-    <button id="generate-btn">Generate Schedule</button>
-    <div id="schedule"></div>
-
+    <header>
+        <h1>Smart Exam Scheduler</h1>
+    </header>
+    
+    <main>
+        <section id="professor-section">
+            <h2>Professor Interface</h2>
+            <form id="professor-form">
+                <label for="course-name">Course Name:</label>
+                <input type="text" id="course-name" name="course-name" required>
+                
+                <label for="preferred-time">Preferred Time:</label>
+                <input type="time" id="preferred-time" name="preferred-time">
+                
+                <label for="room">Preferred Room:</label>
+                <select id="room" name="room">
+                    <option value="Room A">Room A</option>
+                    <option value="Room B">Room B</option>
+                </select>
+                
+                <button type="button" id="submit-button">Submit</button>
+            </form>
+        </section>
+        
+        <section id="schedule-section">
+            <h2>Generated Schedule</h2>
+            <div id="schedule-output">
+                <p>No schedule generated yet.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Smart Exam Scheduler Demo</p>
+    </footer>
+    
     <script src="/static/script.js"></script>
 </body>
 </html>
