@@ -4,9 +4,10 @@ document.getElementById("submit-button").addEventListener("click", async () => {
     const preferredTime = document.getElementById("preferred-time").value;
     const preferredDate = document.getElementById("preferred-date").value;
     const room = document.getElementById("room").value;
+    const examLength = document.getElementById("exam-length").value;
 
     // Validate form fields
-    if (!courseName || !preferredTime || !preferredDate || !room) {
+    if (!courseName || !preferredTime || !preferredDate || !room || !examLength) {
         alert("Please fill in all fields!");
         return;
     }
@@ -17,6 +18,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
         preferred_time: preferredTime,
         preferred_date: preferredDate,
         room: room,
+        exam_length: examLength
     });
 
     try {
@@ -30,6 +32,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
                 preferred_time: preferredTime,
                 preferred_date: preferredDate,
                 room: room,
+                exam_length: examLength
             }),
         });
 
@@ -60,6 +63,38 @@ document.getElementById("submit-button").addEventListener("click", async () => {
         document.getElementById("professor-form").reset();
     } catch (error) {
         console.error("Error generating schedule:", error);
+    }
+});
+
+// Add event listener for the "Optimize Schedule" button
+document.getElementById("optimize-button").addEventListener("click", async () => {
+    try {
+        const response = await fetch("/optimize_schedule", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const optimizedSchedule = await response.json();
+
+        // Update text schedule
+        const scheduleDiv = document.getElementById("schedule-output");
+        scheduleDiv.innerHTML = "<h3>Optimized Schedule:</h3>";
+        optimizedSchedule.forEach((item) => {
+            scheduleDiv.innerHTML += `<p>${item.course} in ${item.room} on ${item.date} at ${item.time}</p>`;
+        });
+
+        // Refresh calendar
+        if (window.calendar) {
+            window.calendar.refetchEvents();
+        }
+    } catch (error) {
+        console.error("Error optimizing schedule:", error);
     }
 });
 
