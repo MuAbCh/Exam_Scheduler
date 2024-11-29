@@ -11,11 +11,27 @@ header {
     color: white;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    /* Remove text-align: center; */
 }
 
-header h1 {
-    font-size: 2rem;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.header-container .logo {
+    position: absolute;
+    left: 1rem;
+    width: 10%;
+    height: auto;
+}
+
+.header-container h1 {
+    flex: 1;
+    text-align: center;
     margin: 0;
     letter-spacing: 1px;
 }
