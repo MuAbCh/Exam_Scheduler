@@ -1,11 +1,27 @@
+import json
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime, timedelta
 from scheduler_logic import optimize_schedule
 
 app = Flask(__name__)
 
-# Store schedules in memory (replace with database in production)
 schedules = []
+
+# Path to your JSON file
+JSON_FILE_PATH = "database/mock_data.json"
+
+# Read data from the JSON file
+def read_json_data():
+    try:
+        with open(JSON_FILE_PATH, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"courses": [], "students": [], "rooms": []}  # Return default structure if file is missing
+
+# Write data to the JSON file
+def write_json_data(data):
+    with open(JSON_FILE_PATH, 'w') as f:
+        json.dump(data, f, indent=4)
 
 @app.route("/")
 def home():
@@ -34,7 +50,7 @@ def generate_schedule():
                 end_datetime = start_datetime + timedelta(minutes=exam_length)
 
                 event = {
-                    "title": f"{schedule['course']}",
+                    "title": f"{schedule['course']} - {schedule['room']}",
                     "start": start_datetime.isoformat(),
                     "end": end_datetime.isoformat(),
                     "allDay": False
@@ -51,14 +67,57 @@ def generate_schedule():
         data = request.json
         print(f"Received POST data: {data}")  # Debug log
 
+        # Ensure time is in HH:MM format
+        time_str = data.get("preferred_time")
+        if len(time_str) > 5:
+            time_str = time_str[:5]
+
         new_schedule = {
             "course": data.get("course_name"),
+            "room": data.get("room"),
             "date": data.get("preferred_date"),
-            "time": data.get("preferred_time"),
+            "time": time_str,
             "exam_length": int(data.get("exam_length"))
         }
+
+        # Update in-memory schedule
         schedules.append(new_schedule)
         print(f"Added new schedule: {new_schedule}")  # Debug log
+
+        # Update the JSON file
+        json_data = read_json_data()
+
+        # Find the course by name
+        course_name = new_schedule["course"]
+        course_found = False
+        for course in json_data["courses"]:
+            if course["name"] == course_name:
+                # Update the exam details for the found course
+                course["exam"] = {
+                    "date": new_schedule["date"],
+                    "time": new_schedule["time"],
+                    "length": f"{new_schedule['exam_length']} hours"
+                }
+                course_found = True
+                break
+
+        if not course_found:
+            # If the course is not found, you may want to add it or handle the error
+            # (though it's expected to already exist, so this part is precautionary)
+            json_data["courses"].append({
+                "id": len(json_data["courses"]) + 1,  # Incremental ID (could be more robust)
+                "name": course_name,
+                "students": [],  # This can be populated based on your students' data
+                "exam": {
+                    "date": new_schedule["date"],
+                    "time": new_schedule["time"],
+                    "length": f"{new_schedule['exam_length']} hours"
+                }
+            })
+
+        # Write the updated JSON back to the file
+        write_json_data(json_data)
+
         return jsonify([new_schedule])
 
 @app.route("/optimize_schedule", methods=["POST"])
