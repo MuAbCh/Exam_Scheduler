@@ -28,6 +28,9 @@
                 <label for="room">Room:</label>
                 <input type="text" id="room" name="room" required>
 
+                <label for="exam-length">Exam Length (minutes):</label>
+                <input type="number" id="exam-length" name="exam-length" min="30" max="180" step="15" required>
+
                 <button type="button" id="submit-button">Submit</button>
             </form>
         </section>
@@ -40,6 +43,7 @@
         <section id="calendar-section">
             <h2>Course Schedule</h2>
             <div id="calendar"></div>
+            <button type="button" id="optimize-button">Optimize Schedule</button>
         </section>
     </main>
     <footer>
