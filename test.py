@@ -16,7 +16,7 @@ def test_bedrock_connection():
                 "messages": [
                     {
                         "role": "user",
-                        "content": "What is the capital of France?"
+                        "content": "Can you help me optimize a scheduling system for university exams if i were to provide you the course information and course enrollment informations such that there are no conflicts or at least minimum conflicts?"
                     }
                 ]
             })
