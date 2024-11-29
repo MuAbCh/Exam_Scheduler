@@ -1,4 +1,5 @@
 import json
+import boto3
 
 def optimize_schedule():
     # Load mock data
