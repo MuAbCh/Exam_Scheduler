@@ -3,11 +3,11 @@ document.getElementById("submit-button").addEventListener("click", async () => {
     const courseName = document.getElementById("course-name").value;
     const preferredTime = document.getElementById("preferred-time").value;
     const preferredDate = document.getElementById("preferred-date").value;
-    const room = document.getElementById("room").value;
+    // const room = document.getElementById("room").value; // Removed Room field
     const examLength = document.getElementById("exam-length").value;
 
     // Validate form fields
-    if (!courseName || !preferredTime || !preferredDate || !room || !examLength) {
+    if (!courseName || !preferredTime || !preferredDate || !examLength) { // Removed room validation
         alert("Please fill in all fields!");
         return;
     }
@@ -17,7 +17,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
         course_name: courseName,
         preferred_time: preferredTime,
         preferred_date: preferredDate,
-        room: room,
+        // room: room, // Removed Room field
         exam_length: examLength
     });
 
@@ -31,7 +31,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
                 course_name: courseName,
                 preferred_time: preferredTime,
                 preferred_date: preferredDate,
-                room: room,
+                // room: room, // Removed Room field
                 exam_length: examLength
             }),
         });
@@ -52,7 +52,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
                     <thead>
                         <tr>
                             <th>Course</th>
-                            <th>Room</th>
+                            <!-- <th>Room</th> --> <!-- Removed Room column -->
                             <th>Date</th>
                             <th>Time</th>
                         </tr>
@@ -61,7 +61,7 @@ document.getElementById("submit-button").addEventListener("click", async () => {
                         ${schedule.map(item => `
                             <tr>
                                 <td>${item.course}</td>
-                                <td>${item.room}</td>
+                                <!-- <td>${item.room}</td> --> <!-- Removed Room field -->
                                 <td>${item.date}</td>
                                 <td>${item.time}</td>
                             </tr>
@@ -116,7 +116,7 @@ document.getElementById("optimize-button").addEventListener("click", async () =>
                     <thead>
                         <tr>
                             <th>Course</th>
-                            <th>Room</th>
+                            <!-- <th>Room</th> --> <!-- Removed Room column -->
                             <th>Date</th>
                             <th>Time</th>
                         </tr>
@@ -125,7 +125,7 @@ document.getElementById("optimize-button").addEventListener("click", async () =>
                         ${optimizedSchedule.map(item => `
                             <tr>
                                 <td>${item.course}</td>
-                                <td>${item.room}</td>
+                                <!-- <td>${item.room}</td> --> <!-- Removed Room field -->
                                 <td>${item.date}</td>
                                 <td>${item.time}</td>
                             </tr>

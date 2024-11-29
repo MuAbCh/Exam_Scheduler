@@ -34,9 +34,12 @@
 
                 <label for="preferred-date">Preferred Date:</label>
                 <input type="date" id="preferred-date" name="preferred-date" required>
-
+                
+                <!-- Removed Room field -->
+                <!--
                 <label for="room">Room:</label>
                 <input type="text" id="room" name="room" required>
+                -->
 
                 <label for="exam-length">Exam Length (minutes):</label>
                 <input type="number" id="exam-length" name="exam-length" min="30" max="180" step="15" required>
@@ -48,6 +51,21 @@
         <section id="schedule-output">
             <h3>Generated Schedule:</h3>
             <p>No schedule generated yet.</p>
+            
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <!-- Removed Room column -->
+                        <!-- <th>Room</th> -->
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ...existing code... -->
+                </tbody>
+            </table>
         </section>
 
         <section id="calendar-section">
