@@ -26,7 +26,11 @@ def optimize_schedule(mock_data):
         response_body = json.loads(response['body'].read())
         schedule = json.loads(response_body['content'][0]['text'])
 
-        print(schedule)
+        # Save the schedule to a new_data.json file
+        with open('database/new_data.json', 'w') as outfile:
+            json.dump(schedule, outfile, indent=4)
+
+        print("Optimized schedule saved successfully!")
         return schedule
         
     except NoCredentialsError:
@@ -45,6 +49,6 @@ if __name__ == "__main__":
         mock_data = json.load(file)
 
     # Get the schedule from the model
-    schedule = get_schedule_from_model(mock_data)
+    schedule = optimize_schedule(mock_data)
     if schedule:
         print("Schedule successfully generated!")
