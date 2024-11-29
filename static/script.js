@@ -45,9 +45,33 @@ document.getElementById("submit-button").addEventListener("click", async () => {
         // Update text schedule
         const scheduleDiv = document.getElementById("schedule-output");
         scheduleDiv.innerHTML = "<h3>Generated Schedule:</h3>";
-        schedule.forEach((item) => {
-            scheduleDiv.innerHTML += `<p>${item.course} in ${item.room} on ${item.date} at ${item.time}</p>`;
-        });
+
+        if (schedule.length > 0) {
+            scheduleDiv.innerHTML += `
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Room</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${schedule.map(item => `
+                            <tr>
+                                <td>${item.course}</td>
+                                <td>${item.room}</td>
+                                <td>${item.date}</td>
+                                <td>${item.time}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        } else {
+            scheduleDiv.innerHTML += "<p>No schedule generated yet.</p>";
+        }
 
         // Refresh calendar
         console.log("Refreshing calendar...");
@@ -82,12 +106,36 @@ document.getElementById("optimize-button").addEventListener("click", async () =>
 
         const optimizedSchedule = await response.json();
 
-        // Update text schedule
+        // Update optimized schedule similarly
         const scheduleDiv = document.getElementById("schedule-output");
         scheduleDiv.innerHTML = "<h3>Optimized Schedule:</h3>";
-        optimizedSchedule.forEach((item) => {
-            scheduleDiv.innerHTML += `<p>${item.course} in ${item.room} on ${item.date} at ${item.time}</p>`;
-        });
+
+        if (optimizedSchedule.length > 0) {
+            scheduleDiv.innerHTML += `
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Room</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${optimizedSchedule.map(item => `
+                            <tr>
+                                <td>${item.course}</td>
+                                <td>${item.room}</td>
+                                <td>${item.date}</td>
+                                <td>${item.time}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        } else {
+            scheduleDiv.innerHTML += "<p>No optimized schedule available.</p>";
+        }
 
         // Refresh calendar
         if (window.calendar) {
@@ -143,4 +191,14 @@ document.addEventListener("DOMContentLoaded", function () {
     calendar.render();
     window.calendar = calendar;
     console.log("Calendar initialized:", window.calendar !== undefined);
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
