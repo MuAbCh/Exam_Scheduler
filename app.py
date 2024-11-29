@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime, timedelta
+from scheduler_logic import optimize_schedule
 
 app = Flask(__name__)
 
@@ -29,7 +30,8 @@ def generate_schedule():
 
                 # Combine date and time into a datetime object
                 start_datetime = datetime.strptime(f"{date_str} {time_str}", f'%Y-%m-%d {time_format}')
-                end_datetime = start_datetime + timedelta(hours=1)
+                exam_length = schedule.get('exam_length', 60)  # Default to 60 minutes if not provided
+                end_datetime = start_datetime + timedelta(minutes=exam_length)
 
                 event = {
                     "title": f"{schedule['course']} - {schedule['room']}",
@@ -58,11 +60,19 @@ def generate_schedule():
             "course": data.get("course_name"),
             "room": data.get("room"),
             "date": data.get("preferred_date"),
-            "time": time_str
+            "time": time_str,
+            "exam_length": int(data.get("exam_length"))
         }
         schedules.append(new_schedule)
         print(f"Added new schedule: {new_schedule}")  # Debug log
         return jsonify([new_schedule])
+
+@app.route("/optimize_schedule", methods=["POST"])
+def optimize_schedule_route():
+    global schedules
+    optimized_schedule = optimize_schedule()
+    schedules = optimized_schedule  # Update schedules with the optimized schedule
+    return jsonify(optimized_schedule)
 
 if __name__ == "__main__":
     app.run(debug=True)
