@@ -164,19 +164,19 @@ document.addEventListener("DOMContentLoaded", function () {
         events: async function (fetchInfo, successCallback, failureCallback) {
             try {
                 console.log("Fetching calendar events...");
-                const response = await fetch("/generate_schedule");
+                const response = await fetch("/get_schedule");
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const events = await response.json();
                 console.log("Raw events from server:", events);
 
-                // Format events for FullCalendar
+                // Ensure events have required fields
                 const formattedEvents = events.map(event => ({
-                    title: event.title,
+                    title: event.title || "No Title",
                     start: event.start,
-                    end: event.end,
-                    allDay: event.allDay
+                    end: event.end || event.start,  // If end is missing, set to start
+                    allDay: event.allDay || false
                 }));
 
                 console.log("Formatted events:", formattedEvents);
@@ -185,7 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Calendar fetch error:", error);
                 failureCallback(error);
             }
-        }
+        },
+        height: 'auto',  // Set minimum height for the calendar
     });
 
     calendar.render();

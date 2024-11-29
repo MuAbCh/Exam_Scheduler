@@ -1,483 +1,483 @@
 {
-  "courses": [
-      {
-          "id": 1,
-          "name": "ECE100",
-          "students": [
-              1,
-              2,
-              3,
-              4,
-              5
-          ],
-          "exam": {
-              "date": "2024-12-15",
-              "time": "10:00",
-              "length": "120 hours"
-          }
-      },
-      {
-          "id": 2,
-          "name": "ECE200",
-          "students": [
-              6,
-              7,
-              8,
-              9,
-              10
-          ],
-          "exam": {
-              "date": "2024-12-16",
-              "time": "14:00",
-              "length": "3 hours"
-          }
-      },
-      {
-          "id": 3,
-          "name": "ECE300",
-          "students": [
-              11,
-              12,
-              13,
-              14,
-              15
-          ],
-          "exam": {
-              "date": null,
-              "time": null,
-              "length": null
-          }
-      },
-      {
-          "id": 4,
-          "name": "ECE400",
-          "students": [
-              16,
-              17,
-              18,
-              19,
-              20
-          ],
-          "exam": {
-              "date": null,
-              "time": null,
-              "length": null
-          }
-      },
-      {
-          "id": 5,
-          "name": "ECE500",
-          "students": [
-              21,
-              22,
-              23,
-              24,
-              25
-          ],
-          "exam": {
-              "date": "2024-12-18",
-              "time": "09:00",
-              "length": "1.5 hours"
-          }
-      },
-      {
-          "id": 6,
-          "name": "ECE600",
-          "students": [
-              26,
-              27,
-              28,
-              29,
-              30
-          ],
-          "exam": {
-              "date": null,
-              "time": null,
-              "length": null
-          }
-      },
-      {
-          "id": 7,
-          "name": "ECE700",
-          "students": [
-              1,
-              6,
-              11,
-              16,
-              21
-          ],
-          "exam": {
-              "date": "2024-12-20",
-              "time": "15:00",
-              "length": "2 hours"
-          }
-      },
-      {
-          "id": 8,
-          "name": "ECE800",
-          "students": [
-              2,
-              7,
-              12,
-              17,
-              22
-          ],
-          "exam": {
-              "date": "2024-12-21",
-              "time": "10:00",
-              "length": "2 hours"
-          }
-      },
-      {
-          "id": 9,
-          "name": "ECE900",
-          "students": [
-              3,
-              8,
-              13,
-              18,
-              23
-          ],
-          "exam": {
-              "date": null,
-              "time": null,
-              "length": null
-          }
-      },
-      {
-          "id": 10,
-          "name": "ECE1000",
-          "students": [
-              4,
-              9,
-              14,
-              19,
-              24
-          ],
-          "exam": {
-              "date": null,
-              "time": null,
-              "length": null
-          }
-      }
-  ],
-  "students": [
-      {
-          "id": 1,
-          "name": "Student 1",
-          "courses": [
-              1,
-              7,
-              5,
-              3
-          ]
-      },
-      {
-          "id": 2,
-          "name": "Student 2",
-          "courses": [
-              1,
-              8,
-              6,
-              4
-          ]
-      },
-      {
-          "id": 3,
-          "name": "Student 3",
-          "courses": [
-              1,
-              9,
-              7,
-              5
-          ]
-      },
-      {
-          "id": 4,
-          "name": "Student 4",
-          "courses": [
-              1,
-              10,
-              8,
-              6
-          ]
-      },
-      {
-          "id": 5,
-          "name": "Student 5",
-          "courses": [
-              1,
-              5,
-              9,
-              7
-          ]
-      },
-      {
-          "id": 6,
-          "name": "Student 6",
-          "courses": [
-              2,
-              7,
-              10,
-              6
-          ]
-      },
-      {
-          "id": 7,
-          "name": "Student 7",
-          "courses": [
-              2,
-              8,
-              5,
-              9
-          ]
-      },
-      {
-          "id": 8,
-          "name": "Student 8",
-          "courses": [
-              2,
-              9,
-              6,
-              10
-          ]
-      },
-      {
-          "id": 9,
-          "name": "Student 9",
-          "courses": [
-              2,
-              10,
-              8,
-              5
-          ]
-      },
-      {
-          "id": 10,
-          "name": "Student 10",
-          "courses": [
-              2,
-              5,
-              7,
-              9
-          ]
-      },
-      {
-          "id": 11,
-          "name": "Student 11",
-          "courses": [
-              3,
-              7,
-              9,
-              10
-          ]
-      },
-      {
-          "id": 12,
-          "name": "Student 12",
-          "courses": [
-              3,
-              8,
-              10,
-              5
-          ]
-      },
-      {
-          "id": 13,
-          "name": "Student 13",
-          "courses": [
-              3,
-              9,
-              5,
-              7
-          ]
-      },
-      {
-          "id": 14,
-          "name": "Student 14",
-          "courses": [
-              3,
-              10,
-              6,
-              8
-          ]
-      },
-      {
-          "id": 15,
-          "name": "Student 15",
-          "courses": [
-              3,
-              5,
-              7,
-              9
-          ]
-      },
-      {
-          "id": 16,
-          "name": "Student 16",
-          "courses": [
-              4,
-              7,
-              10,
-              8
-          ]
-      },
-      {
-          "id": 17,
-          "name": "Student 17",
-          "courses": [
-              4,
-              8,
-              9,
-              6
-          ]
-      },
-      {
-          "id": 18,
-          "name": "Student 18",
-          "courses": [
-              4,
-              9,
-              7,
-              5
-          ]
-      },
-      {
-          "id": 19,
-          "name": "Student 19",
-          "courses": [
-              4,
-              10,
-              8,
-              6
-          ]
-      },
-      {
-          "id": 20,
-          "name": "Student 20",
-          "courses": [
-              4,
-              5,
-              9,
-              7
-          ]
-      },
-      {
-          "id": 21,
-          "name": "Student 21",
-          "courses": [
-              5,
-              7,
-              9,
-              10
-          ]
-      },
-      {
-          "id": 22,
-          "name": "Student 22",
-          "courses": [
-              5,
-              8,
-              10,
-              7
-          ]
-      },
-      {
-          "id": 23,
-          "name": "Student 23",
-          "courses": [
-              5,
-              9,
-              6,
-              8
-          ]
-      },
-      {
-          "id": 24,
-          "name": "Student 24",
-          "courses": [
-              5,
-              10,
-              7,
-              9
-          ]
-      },
-      {
-          "id": 25,
-          "name": "Student 25",
-          "courses": [
-              5,
-              6,
-              8,
-              10
-          ]
-      },
-      {
-          "id": 26,
-          "name": "Student 26",
-          "courses": [
-              6,
-              7,
-              9,
-              8
-          ]
-      },
-      {
-          "id": 27,
-          "name": "Student 27",
-          "courses": [
-              6,
-              8,
-              10,
-              9
-          ]
-      },
-      {
-          "id": 28,
-          "name": "Student 28",
-          "courses": [
-              6,
-              9,
-              7,
-              10
-          ]
-      },
-      {
-          "id": 29,
-          "name": "Student 29",
-          "courses": [
-              6,
-              10,
-              8,
-              9
-          ]
-      },
-      {
-          "id": 30,
-          "name": "Student 30",
-          "courses": [
-              6,
-              7,
-              9,
-              8
-          ]
-      }
-  ],
-  "rooms": [
-      {
-          "id": 1,
-          "name": "Room A",
-          "capacity": 30
-      },
-      {
-          "id": 2,
-          "name": "Room B",
-          "capacity": 40
-      },
-      {
-          "id": 3,
-          "name": "Room C",
-          "capacity": 50
-      }
-  ]
+    "courses": [
+        {
+            "id": 1,
+            "name": "ECE100",
+            "students": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "exam": {
+                "date": "2024-12-17",
+                "time": "12:00",
+                "length": "120 minutes"
+            }
+        },
+        {
+            "id": 2,
+            "name": "ECE200",
+            "students": [
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "exam": {
+                "date": "2024-12-16",
+                "time": "14:00",
+                "length": "180 minutes"
+            }
+        },
+        {
+            "id": 3,
+            "name": "ECE300",
+            "students": [
+                11,
+                12,
+                13,
+                14,
+                15
+            ],
+            "exam": {
+                "date": null,
+                "time": null,
+                "length": null
+            }
+        },
+        {
+            "id": 4,
+            "name": "ECE400",
+            "students": [
+                16,
+                17,
+                18,
+                19,
+                20
+            ],
+            "exam": {
+                "date": null,
+                "time": null,
+                "length": null
+            }
+        },
+        {
+            "id": 5,
+            "name": "ECE500",
+            "students": [
+                21,
+                22,
+                23,
+                24,
+                25
+            ],
+            "exam": {
+                "date": "2024-12-18",
+                "time": "09:00",
+                "length": "90 minutes"
+            }
+        },
+        {
+            "id": 6,
+            "name": "ECE600",
+            "students": [
+                26,
+                27,
+                28,
+                29,
+                30
+            ],
+            "exam": {
+                "date": null,
+                "time": null,
+                "length": null
+            }
+        },
+        {
+            "id": 7,
+            "name": "ECE700",
+            "students": [
+                1,
+                6,
+                11,
+                16,
+                21
+            ],
+            "exam": {
+                "date": "2024-12-20",
+                "time": "15:00",
+                "length": "120 minutes"
+            }
+        },
+        {
+            "id": 8,
+            "name": "ECE800",
+            "students": [
+                2,
+                7,
+                12,
+                17,
+                22
+            ],
+            "exam": {
+                "date": "2024-12-21",
+                "time": "10:00",
+                "length": "120 minutes"
+            }
+        },
+        {
+            "id": 9,
+            "name": "ECE900",
+            "students": [
+                3,
+                8,
+                13,
+                18,
+                23
+            ],
+            "exam": {
+                "date": null,
+                "time": null,
+                "length": null
+            }
+        },
+        {
+            "id": 10,
+            "name": "ECE1000",
+            "students": [
+                4,
+                9,
+                14,
+                19,
+                24
+            ],
+            "exam": {
+                "date": null,
+                "time": null,
+                "length": null
+            }
+        }
+    ],
+    "students": [
+        {
+            "id": 1,
+            "name": "Student 1",
+            "courses": [
+                1,
+                7,
+                5,
+                3
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Student 2",
+            "courses": [
+                1,
+                8,
+                6,
+                4
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Student 3",
+            "courses": [
+                1,
+                9,
+                7,
+                5
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Student 4",
+            "courses": [
+                1,
+                10,
+                8,
+                6
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Student 5",
+            "courses": [
+                1,
+                5,
+                9,
+                7
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Student 6",
+            "courses": [
+                2,
+                7,
+                10,
+                6
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Student 7",
+            "courses": [
+                2,
+                8,
+                5,
+                9
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Student 8",
+            "courses": [
+                2,
+                9,
+                6,
+                10
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Student 9",
+            "courses": [
+                2,
+                10,
+                8,
+                5
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Student 10",
+            "courses": [
+                2,
+                5,
+                7,
+                9
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Student 11",
+            "courses": [
+                3,
+                7,
+                9,
+                10
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Student 12",
+            "courses": [
+                3,
+                8,
+                10,
+                5
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Student 13",
+            "courses": [
+                3,
+                9,
+                5,
+                7
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Student 14",
+            "courses": [
+                3,
+                10,
+                6,
+                8
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Student 15",
+            "courses": [
+                3,
+                5,
+                7,
+                9
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Student 16",
+            "courses": [
+                4,
+                7,
+                10,
+                8
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Student 17",
+            "courses": [
+                4,
+                8,
+                9,
+                6
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Student 18",
+            "courses": [
+                4,
+                9,
+                7,
+                5
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Student 19",
+            "courses": [
+                4,
+                10,
+                8,
+                6
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Student 20",
+            "courses": [
+                4,
+                5,
+                9,
+                7
+            ]
+        },
+        {
+            "id": 21,
+            "name": "Student 21",
+            "courses": [
+                5,
+                7,
+                9,
+                10
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Student 22",
+            "courses": [
+                5,
+                8,
+                10,
+                7
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Student 23",
+            "courses": [
+                5,
+                9,
+                6,
+                8
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Student 24",
+            "courses": [
+                5,
+                10,
+                7,
+                9
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Student 25",
+            "courses": [
+                5,
+                6,
+                8,
+                10
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Student 26",
+            "courses": [
+                6,
+                7,
+                9,
+                8
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Student 27",
+            "courses": [
+                6,
+                8,
+                10,
+                9
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Student 28",
+            "courses": [
+                6,
+                9,
+                7,
+                10
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Student 29",
+            "courses": [
+                6,
+                10,
+                8,
+                9
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Student 30",
+            "courses": [
+                6,
+                7,
+                9,
+                8
+            ]
+        }
+    ],
+    "rooms": [
+        {
+            "id": 1,
+            "name": "Room A",
+            "capacity": 30
+        },
+        {
+            "id": 2,
+            "name": "Room B",
+            "capacity": 40
+        },
+        {
+            "id": 3,
+            "name": "Room C",
+            "capacity": 50
+        }
+    ]
 }
