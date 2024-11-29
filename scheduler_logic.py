@@ -17,7 +17,7 @@ def optimize_schedule(mock_data):
                 "messages": [
                     {
                         "role": "user",
-                        "content": f"Given the following course schedule and student enrollment data, your task is to optimize the exam schedule to avoid any conflicts and minimize student stress. Check for any exam time conflicts for students enrolled in multiple courses. If a student is taking two courses that have exams at the same time, adjust one of the exam times to avoid conflict. After resolving conflicts, assign appropriate rooms to each exam based on the available room capacities, ensuring that no room exceeds its capacity. Optimize the overall student workload by spreading exams out across days. Try to avoid scheduling multiple exams for a student on the same day, if possible, to minimize stress. Return a revised schedule with adjusted exam times and room assignments, while ensuring that no student faces overlapping exams. Make sure to only return the optimized schedule. Do not return any explanation or other wording. Only return the optimized schedule. Here is the course data: {json.dumps(mock_data)}"
+                        "content": f"Given the following course schedule and student enrollment data, your task is to optimize the exam schedule to avoid any conflicts and minimize student stress. Check for any exam time conflicts for students enrolled in multiple courses. If a student is taking two courses that have exams at the same time, adjust one of the exam times to avoid conflict. After resolving conflicts, assign appropriate rooms to each exam based on the available room capacities, ensuring that no room exceeds its capacity. Optimize the overall student workload by spreading exams out across days. Try to avoid scheduling multiple exams for a student on the same day, if possible, to minimize stress. Return a revised schedule with adjusted exam times and room assignments, while ensuring that no student faces overlapping exams. Make sure to only return the optimized schedule. Do not return any explantion or other wording. Only return the optimized schedule. Here is the course data: {json.dumps(mock_data)}"
                     }
                 ]
             })
@@ -50,7 +50,7 @@ if __name__ == "__main__":
         mock_data = json.load(file)
 
     # Get the schedule from the model
-    schedule = optimize_schedule(mock_data)  # Changed get_schedule_from_model to optimize_schedule
+    schedule = optimize_schedule(mock_data)
     if schedule:
         print("Schedule successfully generated!")
 
