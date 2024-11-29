@@ -1,31 +1,67 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff; /* Change background to white */
+    color: #333333; /* Dark text for readability on white background */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #002147, #ffffff);
-    color: #333;
+    font-size: 1.1rem; /* Increase base font size for better readability */
+    line-height: 1.6;  /* Adjust line height for improved text spacing */
 }
 
 header {
-    background-color: #002147;
-    color: white;
+    background-color: #1b263b; /* Dark blue header */
+    color: #ffffff; /* White text for contrast */
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Remove text-align: center; */
 }
 
+nav {
+    /* Center the navigation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex;
+    gap: 2rem; /* Add space between links */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+nav li {
+    /* ...existing code... */
+}
+
+nav a {
+    color: #ffffff; /* Change links to white */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transform to transition */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+nav a:hover {
+    color: #ffdd57; /* Highlight color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     width: 100%;
+    padding: 0 2rem;
 }
 
 .header-container .logo {
     position: absolute;
     left: 1rem;
-    width: 10%;
+    width: 12%; 
     height: auto;
 }
 
@@ -34,10 +70,16 @@ header {
     text-align: center;
     margin: 0;
     letter-spacing: 1px;
+    font-size: 2rem;
+    color: #ffffff; /* Change header text color to white */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Increase header font size */
 }
 
 main {
-    padding: 2rem 1rem;
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,9 +87,10 @@ main {
 }
 
 section {
+    background: #f0f8ff; /* Light blue background for sections */
+    color: #333333; /* Dark text for readability */
     width: 90%;
     max-width: 700px;
-    background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 2rem;
     border-radius: 12px;
@@ -60,31 +103,38 @@ section:hover {
 }
 
 label {
+    color: #1b263b; /* Dark blue labels on light background */
     display: block;
     margin: 1rem 0 0.5rem;
     font-weight: bold;
-    color: #444;
+    font-size: 1.1rem; /* Increase label font size */
 }
 
 input, select, button {
+    background: #e6f0ff; /* Light blue background for inputs */
+    color: #333333; /* Dark text */
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #1b263b; /* Dark blue borders */
     border-radius: 6px;
     font-size: 1rem;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+input::placeholder {
+    color: #a9a9a9; /* Gray placeholders for subtlety */
+}
+
 input:focus, select:focus {
     outline: none;
-    border-color: #000000;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    border-color: #1b263b; /* Dark blue border on focus */
+    box-shadow: 0 0 4px rgba(27, 38, 59, 0.6); /* Dark blue shadow */
 }
 
 button {
-    background: linear-gradient(90deg, #00539B, #002147);
-    color: white;
+    background: #1b263b; /* Dark blue buttons */
+    color: #ffffff; /* White text */
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -93,40 +143,68 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(90deg, #002147, #00539B);
+    background: #163a5f; /* Darker blue on hover */
+    transform: scale(1.05);
 }
 
 #schedule-output {
+    background: #f9f9f9; /* Light background for schedule output */
+    color: #333333; /* Dark text */
     margin-top: 1.5rem;
     text-align: left;
     padding: 1.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #1b263b; /* Dark blue border */
     border-radius: 8px;
-    background: #fafafa;
     font-size: 1rem;
     line-height: 1.6;
 }
 
 #schedule-output h3 {
-    color: #000000;
+    color: #1b263b; /* Dark blue text for headers */
     margin-bottom: 1rem;
 }
 
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #1b263b; /* Dark blue headers */
+    color: #ffffff; /* White text */
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #e6f0ff; /* Light blue for even rows */
+}
+
+.schedule-table tr:hover {
+    background-color: #b3cde0; /* Highlight row on hover */
+}
+
 footer {
+    background-color: #1b263b; /* Dark blue footer */
+    color: #ffffff; /* White text */
     margin-top: 2rem;
-    background-color: #002147;
-    color: white;
     padding: 1rem;
     text-align: center;
     font-size: 0.9rem;
 }
 
 #calendar {
+    background: #ffffff; /* White background for calendar */
+    color: #333333; /* Dark text */
     max-width: 900px;
     margin: 0 auto;
     padding: 1rem;
-    background: white;
-    border: 1px solid #ddd;
+    border: 1px solid #1b263b; /* Dark blue border */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

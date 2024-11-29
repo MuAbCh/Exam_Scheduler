@@ -34,7 +34,7 @@ def generate_schedule():
                 end_datetime = start_datetime + timedelta(minutes=exam_length)
 
                 event = {
-                    "title": f"{schedule['course']} - {schedule['room']}",
+                    "title": f"{schedule['course']}",
                     "start": start_datetime.isoformat(),
                     "end": end_datetime.isoformat(),
                     "allDay": False
@@ -51,16 +51,10 @@ def generate_schedule():
         data = request.json
         print(f"Received POST data: {data}")  # Debug log
 
-        # Ensure time is in HH:MM format
-        time_str = data.get("preferred_time")
-        if len(time_str) > 5:
-            time_str = time_str[:5]
-
         new_schedule = {
             "course": data.get("course_name"),
-            "room": data.get("room"),
             "date": data.get("preferred_date"),
-            "time": time_str,
+            "time": data.get("preferred_time"),
             "exam_length": int(data.get("exam_length"))
         }
         schedules.append(new_schedule)
