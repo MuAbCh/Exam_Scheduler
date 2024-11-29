@@ -2,7 +2,7 @@ import boto3
 import json
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
-def get_schedule_from_model(mock_data):
+def optimize_schedule(mock_data):
     try:
         # Initialize Bedrock runtime client
         bedrock_client = boto3.client('bedrock-runtime', region_name='us-west-2')
